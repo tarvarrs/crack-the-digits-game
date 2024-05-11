@@ -18,22 +18,6 @@ def user_input():
     
     return str(input_number)
 
-
-def check_answer(user_num,comp_num):
-    res = ''
-    if user_num == comp_num:
-        return '🟩🟩🟩🟩\nwin win!'
-    
-    for i in range(4):
-        if comp_num[i] == user_num[i]:
-            res+='🟩'
-        elif comp_num[i] in user_num:
-                res+='🟨'
-        else:
-            res+='⬜️'
-
-    return res
-
 def check_win(user_num,comp_num):
     return user_num == comp_num
 
@@ -49,7 +33,6 @@ def mask(user_num,comp_num):
 
     return res
 
-#print(check_answer('1234','1234'))
 
 def game():
     comp_num = str(rand(1000,9999))
@@ -57,10 +40,12 @@ def game():
     while True:
         user_num = user_input()
         if check_win(user_num,comp_num):
-            print('🟩🟩🟩🟩\nwin win!')
-            print(comp_num)
+            msg = '🟩🟩🟩🟩\nwin win!'
+            print(msg)
             return 
         
-        print(mask(user_num,comp_num))
+        msg = mask(user_num,comp_num)
+        print(msg)
+        
 
 game()
