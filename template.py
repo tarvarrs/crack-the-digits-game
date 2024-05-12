@@ -33,7 +33,6 @@ def mask(user_num,comp_num):
 
     return res
 
-
 def game():
     comp_num = str(rand(1000,9999))
     
